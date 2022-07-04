@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		840319302872C4C200603534 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8403192F2872C4C200603534 /* AppDelegate.swift */; };
 		840319322872C4C300603534 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840319312872C4C300603534 /* SceneDelegate.swift */; };
-		840319342872C4C300603534 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840319332872C4C300603534 /* ViewController.swift */; };
+		840319342872C4C300603534 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840319332872C4C300603534 /* TabBarController.swift */; };
 		840319372872C4C300603534 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840319352872C4C300603534 /* Main.storyboard */; };
 		840319392872C4C400603534 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840319382872C4C400603534 /* Assets.xcassets */; };
 		8403193C2872C4C400603534 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8403193A2872C4C400603534 /* LaunchScreen.storyboard */; };
+		840319492872D62B00603534 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840319482872D62B00603534 /* CatalogViewController.swift */; };
+		8403194B2872D69600603534 /* HumanLossesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8403194A2872D69600603534 /* HumanLossesList.swift */; };
+		8403194D2872D71600603534 /* EquipmentLossesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8403194C2872D71600603534 /* EquipmentLossesViewController.swift */; };
+		840319502872EE3100603534 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8403194F2872EE3100603534 /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8403192C2872C4C200603534 /* RusLosses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RusLosses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8403192F2872C4C200603534 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		840319312872C4C300603534 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		840319332872C4C300603534 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		840319332872C4C300603534 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		840319362872C4C300603534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		840319382872C4C400603534 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8403193B2872C4C400603534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8403193D2872C4C400603534 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		840319482872D62B00603534 /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
+		8403194A2872D69600603534 /* HumanLossesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanLossesList.swift; sourceTree = "<group>"; };
+		8403194C2872D71600603534 /* EquipmentLossesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentLossesViewController.swift; sourceTree = "<group>"; };
+		8403194F2872EE3100603534 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,43 @@
 		8403192E2872C4C200603534 /* RusLosses */ = {
 			isa = PBXGroup;
 			children = (
-				8403192F2872C4C200603534 /* AppDelegate.swift */,
-				840319312872C4C300603534 /* SceneDelegate.swift */,
-				840319332872C4C300603534 /* ViewController.swift */,
+				8403194E2872EE0300603534 /* Extentions */,
+				840319442872D4D900603534 /* SupportingFiles */,
+				840319472872D5D300603534 /* Controllers */,
 				840319352872C4C300603534 /* Main.storyboard */,
 				840319382872C4C400603534 /* Assets.xcassets */,
 				8403193A2872C4C400603534 /* LaunchScreen.storyboard */,
 				8403193D2872C4C400603534 /* Info.plist */,
 			);
 			path = RusLosses;
+			sourceTree = "<group>";
+		};
+		840319442872D4D900603534 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				8403192F2872C4C200603534 /* AppDelegate.swift */,
+				840319312872C4C300603534 /* SceneDelegate.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		840319472872D5D300603534 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				840319332872C4C300603534 /* TabBarController.swift */,
+				840319482872D62B00603534 /* CatalogViewController.swift */,
+				8403194A2872D69600603534 /* HumanLossesList.swift */,
+				8403194C2872D71600603534 /* EquipmentLossesViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8403194E2872EE0300603534 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				8403194F2872EE3100603534 /* UIColor+Extension.swift */,
+			);
+			path = Extentions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +174,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				840319342872C4C300603534 /* ViewController.swift in Sources */,
+				840319502872EE3100603534 /* UIColor+Extension.swift in Sources */,
+				8403194B2872D69600603534 /* HumanLossesList.swift in Sources */,
+				840319492872D62B00603534 /* CatalogViewController.swift in Sources */,
+				840319342872C4C300603534 /* TabBarController.swift in Sources */,
 				840319302872C4C200603534 /* AppDelegate.swift in Sources */,
 				840319322872C4C300603534 /* SceneDelegate.swift in Sources */,
+				8403194D2872D71600603534 /* EquipmentLossesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
