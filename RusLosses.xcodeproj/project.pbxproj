@@ -16,7 +16,10 @@
 		840319492872D62B00603534 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840319482872D62B00603534 /* CatalogViewController.swift */; };
 		8403194B2872D69600603534 /* HumanLossesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8403194A2872D69600603534 /* HumanLossesList.swift */; };
 		8403194D2872D71600603534 /* EquipmentLossesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8403194C2872D71600603534 /* EquipmentLossesViewController.swift */; };
-		840319502872EE3100603534 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8403194F2872EE3100603534 /* UIColor+Extension.swift */; };
+		8451E94C2872F1B40033FE39 /* Equipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8451E94B2872F1B40033FE39 /* Equipment.swift */; };
+		8451E94E2872FA230033FE39 /* Orks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8451E94D2872FA230033FE39 /* Orks.swift */; };
+		8451E95228730C400033FE39 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8451E95128730C400033FE39 /* NetworkManager.swift */; };
+		8451E95528730D590033FE39 /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8451E95428730D590033FE39 /* Constans.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +34,10 @@
 		840319482872D62B00603534 /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
 		8403194A2872D69600603534 /* HumanLossesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanLossesList.swift; sourceTree = "<group>"; };
 		8403194C2872D71600603534 /* EquipmentLossesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentLossesViewController.swift; sourceTree = "<group>"; };
-		8403194F2872EE3100603534 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		8451E94B2872F1B40033FE39 /* Equipment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equipment.swift; sourceTree = "<group>"; };
+		8451E94D2872FA230033FE39 /* Orks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orks.swift; sourceTree = "<group>"; };
+		8451E95128730C400033FE39 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		8451E95428730D590033FE39 /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +70,9 @@
 		8403192E2872C4C200603534 /* RusLosses */ = {
 			isa = PBXGroup;
 			children = (
-				8403194E2872EE0300603534 /* Extentions */,
+				8451E95328730D4F0033FE39 /* Common */,
+				8451E95028730C330033FE39 /* NetworkManager */,
+				8451E94A2872F19E0033FE39 /* Models */,
 				840319442872D4D900603534 /* SupportingFiles */,
 				840319472872D5D300603534 /* Controllers */,
 				840319352872C4C300603534 /* Main.storyboard */,
@@ -95,12 +103,29 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		8403194E2872EE0300603534 /* Extentions */ = {
+		8451E94A2872F19E0033FE39 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8403194F2872EE3100603534 /* UIColor+Extension.swift */,
+				8451E94B2872F1B40033FE39 /* Equipment.swift */,
+				8451E94D2872FA230033FE39 /* Orks.swift */,
 			);
-			path = Extentions;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8451E95028730C330033FE39 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				8451E95128730C400033FE39 /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		8451E95328730D4F0033FE39 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8451E95428730D590033FE39 /* Constans.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,13 +199,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				840319502872EE3100603534 /* UIColor+Extension.swift in Sources */,
+				8451E94C2872F1B40033FE39 /* Equipment.swift in Sources */,
+				8451E95228730C400033FE39 /* NetworkManager.swift in Sources */,
 				8403194B2872D69600603534 /* HumanLossesList.swift in Sources */,
 				840319492872D62B00603534 /* CatalogViewController.swift in Sources */,
+				8451E95528730D590033FE39 /* Constans.swift in Sources */,
 				840319342872C4C300603534 /* TabBarController.swift in Sources */,
 				840319302872C4C200603534 /* AppDelegate.swift in Sources */,
 				840319322872C4C300603534 /* SceneDelegate.swift in Sources */,
 				8403194D2872D71600603534 /* EquipmentLossesViewController.swift in Sources */,
+				8451E94E2872FA230033FE39 /* Orks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
