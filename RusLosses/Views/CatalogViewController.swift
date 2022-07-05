@@ -9,7 +9,8 @@ import UIKit
 
 class CatalogViewController: UIViewController {
 
-    var viewModel = CatalogViewModel()
+    var orksViewModel = OrksViewModel()
+    var equipmentViewModel = EquipmentViewModel()
 
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView()
@@ -25,6 +26,7 @@ class CatalogViewController: UIViewController {
         containerImageView.layer.borderWidth = 2
         containerImageView.layer.borderColor = UIColor.systemGray6.cgColor
         containerImageView.contentMode = .left
+        containerImageView.isUserInteractionEnabled = true
         return containerImageView
     }()
 
@@ -32,30 +34,37 @@ class CatalogViewController: UIViewController {
         let orkTitle = UILabel()
         orkTitle.numberOfLines = 0
         orkTitle.font = .systemFont(ofSize: 25, weight: .semibold)
+        orkTitle.isUserInteractionEnabled = true
         return orkTitle
     }()
 
     private lazy var orksButton: UIButton = {
         let orksButton = UIButton()
+        orksButton.addTarget(self, action: #selector(orksButtonPressed),
+                             for: .touchUpInside)
         return orksButton
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Enemy Losses"
-
-        viewModel.loadEquip(completion: {
+        equipmentViewModel.loadEquip(completion: {
             self.collectionView.reloadData()
         })
 
-        viewModel.loadGoodOrks(completion: {
-            if let orks = self.viewModel.orks.last?.personnel {
+        orksViewModel.loadGoodOrks(completion: {
+            if let orks = self.orksViewModel.orks.last?.personnel {
                 let stringOrks = String(orks)
                 self.orkTitle.text = "There are already \(stringOrks) good orcs"
             }
         })
 
         setupConstraints()
+    }
+
+    @objc private func orksButtonPressed() {
+        let vc = OrkLossesList()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -93,7 +102,7 @@ extension CatalogViewController {
             orksButton.leadingAnchor.constraint(
                 equalTo: containerImageView.leadingAnchor),
             orksButton.trailingAnchor.constraint(
-                equalTo: containerImageView.trailingAnchor),
+                equalTo: containerImageView.trailingAnchor)
         ])
     }
 }

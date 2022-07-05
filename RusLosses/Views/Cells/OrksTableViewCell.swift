@@ -9,6 +9,8 @@ import UIKit
 
 class OrksTableViewCell: UITableViewCell {
 
+    static let identifier = "OrksTableViewCell"
+
     private lazy var dayLabel: UILabel = {
         let daylabel = UILabel()
         daylabel.font.withSize(25)
@@ -30,7 +32,7 @@ class OrksTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+        setupCell()
     }
     
     required init?(coder: NSCoder) {
@@ -51,23 +53,27 @@ class OrksTableViewCell: UITableViewCell {
             dayLabel.heightAnchor.constraint(equalToConstant: 16),
 
             dateLabel.topAnchor.constraint(
-                equalTo: dayLabel.bottomAnchor, constant: -5),
+                equalTo: dayLabel.bottomAnchor, constant: 10),
             dateLabel.leadingAnchor.constraint(
-                equalTo: contentView.leadingAnchor),
+                equalTo: contentView.leadingAnchor, constant: 5),
             dateLabel.heightAnchor.constraint(equalToConstant: 16),
 
             orksLabel.topAnchor.constraint(
-                equalTo: dateLabel.bottomAnchor, constant: -5),
+                equalTo: dateLabel.bottomAnchor, constant: 5),
             orksLabel.centerXAnchor.constraint(
-                equalTo: dateLabel.leadingAnchor),
+                equalTo: contentView.centerXAnchor),
             orksLabel.heightAnchor.constraint(equalToConstant: 16)
 
         ])
     }
 
     func configureCell(orks: Orks) {
-        dayLabel.text = String(describing: orks.day)
-        dateLabel.text = orks.date
-        orksLabel.text = String(describing: orks.personnel)
+        if let day = orks.day {
+            dayLabel.text = "Invasion day \(String(describing: day))"
+        }
+         if let goodOrks = orks.personnel {
+            orksLabel.text = "Orks killed \(String(describing: goodOrks))"
+        }
+        dateLabel.text = "Date " + (orks.date ?? "No Date")
     }
 }

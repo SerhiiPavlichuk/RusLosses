@@ -14,14 +14,15 @@
 		840319392872C4C400603534 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840319382872C4C400603534 /* Assets.xcassets */; };
 		8403193C2872C4C400603534 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8403193A2872C4C400603534 /* LaunchScreen.storyboard */; };
 		840319492872D62B00603534 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840319482872D62B00603534 /* CatalogViewController.swift */; };
-		8403194B2872D69600603534 /* HumanLossesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8403194A2872D69600603534 /* HumanLossesList.swift */; };
+		8403194B2872D69600603534 /* OrkLossesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8403194A2872D69600603534 /* OrkLossesList.swift */; };
 		8403194D2872D71600603534 /* EquipmentLossesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8403194C2872D71600603534 /* EquipmentLossesViewController.swift */; };
 		8451E94C2872F1B40033FE39 /* Equipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8451E94B2872F1B40033FE39 /* Equipment.swift */; };
 		8451E94E2872FA230033FE39 /* Orks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8451E94D2872FA230033FE39 /* Orks.swift */; };
 		8451E95228730C400033FE39 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8451E95128730C400033FE39 /* NetworkManager.swift */; };
 		8451E95528730D590033FE39 /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8451E95428730D590033FE39 /* Constans.swift */; };
 		84752A3E2874887B006E4008 /* OrksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84752A3D2874887B006E4008 /* OrksTableViewCell.swift */; };
-		84A911BE2874209D00E0F0DD /* CatalogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A911BD2874209D00E0F0DD /* CatalogViewModel.swift */; };
+		84752A4B2874C183006E4008 /* OrksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84752A4A2874C183006E4008 /* OrksViewModel.swift */; };
+		84752A4D2874C192006E4008 /* EquipmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84752A4C2874C192006E4008 /* EquipmentViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,14 +35,15 @@
 		8403193B2872C4C400603534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8403193D2872C4C400603534 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		840319482872D62B00603534 /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
-		8403194A2872D69600603534 /* HumanLossesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanLossesList.swift; sourceTree = "<group>"; };
+		8403194A2872D69600603534 /* OrkLossesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrkLossesList.swift; sourceTree = "<group>"; };
 		8403194C2872D71600603534 /* EquipmentLossesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentLossesViewController.swift; sourceTree = "<group>"; };
 		8451E94B2872F1B40033FE39 /* Equipment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equipment.swift; sourceTree = "<group>"; };
 		8451E94D2872FA230033FE39 /* Orks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orks.swift; sourceTree = "<group>"; };
 		8451E95128730C400033FE39 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		8451E95428730D590033FE39 /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
 		84752A3D2874887B006E4008 /* OrksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrksTableViewCell.swift; sourceTree = "<group>"; };
-		84A911BD2874209D00E0F0DD /* CatalogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewModel.swift; sourceTree = "<group>"; };
+		84752A4A2874C183006E4008 /* OrksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrksViewModel.swift; sourceTree = "<group>"; };
+		84752A4C2874C192006E4008 /* EquipmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +105,7 @@
 			children = (
 				84752A3C28748859006E4008 /* Cells */,
 				840319482872D62B00603534 /* CatalogViewController.swift */,
-				8403194A2872D69600603534 /* HumanLossesList.swift */,
+				8403194A2872D69600603534 /* OrkLossesList.swift */,
 				8403194C2872D71600603534 /* EquipmentLossesViewController.swift */,
 			);
 			path = Views;
@@ -153,7 +155,8 @@
 		84A911BC2874208A00E0F0DD /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				84A911BD2874209D00E0F0DD /* CatalogViewModel.swift */,
+				84752A4A2874C183006E4008 /* OrksViewModel.swift */,
+				84752A4C2874C192006E4008 /* EquipmentViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -229,16 +232,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84A911BE2874209D00E0F0DD /* CatalogViewModel.swift in Sources */,
 				8451E94C2872F1B40033FE39 /* Equipment.swift in Sources */,
 				8451E95228730C400033FE39 /* NetworkManager.swift in Sources */,
-				8403194B2872D69600603534 /* HumanLossesList.swift in Sources */,
+				8403194B2872D69600603534 /* OrkLossesList.swift in Sources */,
 				84752A3E2874887B006E4008 /* OrksTableViewCell.swift in Sources */,
 				840319492872D62B00603534 /* CatalogViewController.swift in Sources */,
 				8451E95528730D590033FE39 /* Constans.swift in Sources */,
 				840319342872C4C300603534 /* TabBarController.swift in Sources */,
 				840319302872C4C200603534 /* AppDelegate.swift in Sources */,
 				840319322872C4C300603534 /* SceneDelegate.swift in Sources */,
+				84752A4B2874C183006E4008 /* OrksViewModel.swift in Sources */,
+				84752A4D2874C192006E4008 /* EquipmentViewModel.swift in Sources */,
 				8403194D2872D71600603534 /* EquipmentLossesViewController.swift in Sources */,
 				8451E94E2872FA230033FE39 /* Orks.swift in Sources */,
 			);

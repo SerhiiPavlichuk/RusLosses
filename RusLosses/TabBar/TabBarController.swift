@@ -34,7 +34,7 @@ class TabBarController: UITabBarController {
 
     private func setupViewControllers() -> [UIViewController] {
         let catalogVC = UINavigationController(rootViewController: CatalogViewController())
-        let humanVC = UINavigationController(rootViewController: HumanLossesList())
+        let humanVC = UINavigationController(rootViewController: OrkLossesList())
         let eqipmentVC = UINavigationController(rootViewController: EquipmentLossesViewController())
         let controllers = [catalogVC, humanVC, eqipmentVC]
         return controllers
