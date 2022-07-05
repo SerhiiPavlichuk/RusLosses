@@ -51,7 +51,7 @@ class CatalogViewController: UIViewController {
         viewModel.loadGoodOrks(completion: {
             if let orks = self.viewModel.orks.last?.personnel {
                 let stringOrks = String(orks)
-                self.orkTitle.text = "There are already \(stringOrks) good orcs"   
+                self.orkTitle.text = "There are already \(stringOrks) good orcs"
             }
         })
 
@@ -64,32 +64,36 @@ extension CatalogViewController {
         view.addSubview(containerImageView)
         containerImageView.addSubview(orkTitle)
         containerImageView.addSubview(orksButton)
+
         containerImageView.translatesAutoresizingMaskIntoConstraints = false
         orkTitle.translatesAutoresizingMaskIntoConstraints = false
         orksButton.translatesAutoresizingMaskIntoConstraints = false
+
         NSLayoutConstraint.activate([
-            containerImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            containerImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            containerImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            containerImageView.heightAnchor.constraint(equalToConstant: 100),
-            orkTitle.topAnchor.constraint(equalTo: containerImageView.topAnchor, constant: 5),
-            orkTitle.leadingAnchor.constraint(equalTo: containerImageView.centerXAnchor, constant: -50),
-            orkTitle.trailingAnchor.constraint(equalTo: containerImageView.trailingAnchor, constant: -5),
-            orksButton.topAnchor.constraint(equalTo: containerImageView.topAnchor),
-            orksButton.bottomAnchor.constraint(equalTo: containerImageView.bottomAnchor),
-            orksButton.leadingAnchor.constraint(equalTo: containerImageView.leadingAnchor),
-            orksButton.trailingAnchor.constraint(equalTo: containerImageView.trailingAnchor),
+            containerImageView.leadingAnchor.constraint(
+                equalTo: view.leadingAnchor, constant: 50),
+            containerImageView.trailingAnchor.constraint(
+                equalTo: view.trailingAnchor, constant: -50),
+            containerImageView.topAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.topAnchor),
+            containerImageView.heightAnchor.constraint(
+                equalToConstant: 100),
+
+            orkTitle.topAnchor.constraint(
+                equalTo: containerImageView.topAnchor, constant: 5),
+            orkTitle.leadingAnchor.constraint(
+                equalTo: containerImageView.centerXAnchor, constant: -50),
+            orkTitle.trailingAnchor.constraint(
+                equalTo: containerImageView.trailingAnchor, constant: -5),
+
+            orksButton.topAnchor.constraint(
+                equalTo: containerImageView.topAnchor),
+            orksButton.bottomAnchor.constraint(
+                equalTo: containerImageView.bottomAnchor),
+            orksButton.leadingAnchor.constraint(
+                equalTo: containerImageView.leadingAnchor),
+            orksButton.trailingAnchor.constraint(
+                equalTo: containerImageView.trailingAnchor),
         ])
     }
-}
-extension NSMutableAttributedString {
-
-    func setColorForText(textForAttribute: String, withColor color: UIColor) {
-        let range: NSRange = self.mutableString.range(of: textForAttribute, options: .caseInsensitive)
-
-        // Swift 4.2 and above
-        self.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: range)
-
-    }
-
 }
