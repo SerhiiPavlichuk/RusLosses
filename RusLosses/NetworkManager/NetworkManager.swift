@@ -35,7 +35,25 @@ struct NetworkManager {
         }
     }
 
-    func convertNilPropertyToString(string: String?) -> String {
+    func performOrksRequest(completion: @escaping(([Orks]) -> ())) {
+        if let url = URL(string: Constants.Network.orksURL) {
+            let session = URLSession(configuration: .default)
+            let task = session.dataTask(with: url) { data, response, error in
+                if let unwrapedData = data {
+                    let decoder = JSONDecoder()
+                    do {
+                        let decodeData = try decoder.decode([Orks].self, from: unwrapedData)
+                        completion(decodeData)
+                    } catch {
+                        print(error)
+                    }
+                }
+            }
+            task.resume()
+        }
+    }
+
+    private func convertNilPropertyToString(string: String?) -> String {
         guard let string = string else {
             return "Convert String Error"
 

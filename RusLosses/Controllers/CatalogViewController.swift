@@ -10,6 +10,7 @@ import UIKit
 class CatalogViewController: UIViewController {
 
     var equipments: [Equipment] = []
+    var orks: [Orks] = []
 
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView()
@@ -19,12 +20,15 @@ class CatalogViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        networkManager.delegate = self
-//        networkManager.performEquipmentRequest()
         loadEquip {
             print(self.equipments)
         }
+
+        loadGoodOrks {
+            print(self.orks)
+        }
+
+
     }
 
     func loadEquip(completion: @escaping(() -> ())) {
@@ -32,16 +36,9 @@ class CatalogViewController: UIViewController {
             self.equipments = equip
         })
     }
-
-//extension CatalogViewController: NetworkManagerDelegate {
-//    func didLoadEquipment(_ networkManager: NetworkManager, equip: Equipment) {
-//        equipments.append(equip)
-//    }
-//
-//    func didFailWithError(error: Error) {
-//        fatalError()
-//    }
-//
-//
-//}
+    func loadGoodOrks(completion: @escaping(() -> ())) {
+        NetworkManager.shared.performOrksRequest(completion: { orks in
+            self.orks = orks
+        })
+    }
 }
