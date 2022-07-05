@@ -11,6 +11,12 @@ class CatalogViewController: UIViewController {
 
     var equipments: [Equipment] = []
 
+    private lazy var collectionView: UICollectionView = {
+        let collectionView = UICollectionView()
+
+        return collectionView
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
