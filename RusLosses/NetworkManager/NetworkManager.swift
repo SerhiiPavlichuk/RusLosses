@@ -43,7 +43,9 @@ struct NetworkManager {
                     let decoder = JSONDecoder()
                     do {
                         let decodeData = try decoder.decode([Orks].self, from: unwrapedData)
-                        completion(decodeData)
+                        DispatchQueue.main.async {
+                            completion(decodeData)
+                        }
                     } catch {
                         print(error)
                     }

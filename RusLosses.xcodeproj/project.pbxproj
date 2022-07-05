@@ -20,6 +20,7 @@
 		8451E94E2872FA230033FE39 /* Orks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8451E94D2872FA230033FE39 /* Orks.swift */; };
 		8451E95228730C400033FE39 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8451E95128730C400033FE39 /* NetworkManager.swift */; };
 		8451E95528730D590033FE39 /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8451E95428730D590033FE39 /* Constans.swift */; };
+		84A911BE2874209D00E0F0DD /* CatalogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A911BD2874209D00E0F0DD /* CatalogViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		8451E94D2872FA230033FE39 /* Orks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orks.swift; sourceTree = "<group>"; };
 		8451E95128730C400033FE39 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		8451E95428730D590033FE39 /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
+		84A911BD2874209D00E0F0DD /* CatalogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		8403192E2872C4C200603534 /* RusLosses */ = {
 			isa = PBXGroup;
 			children = (
+				84A911BC2874208A00E0F0DD /* ViewModels */,
 				8451E95328730D4F0033FE39 /* Common */,
 				8451E95028730C330033FE39 /* NetworkManager */,
 				8451E94A2872F19E0033FE39 /* Models */,
@@ -95,8 +98,8 @@
 		840319472872D5D300603534 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				840319332872C4C300603534 /* TabBarController.swift */,
 				840319482872D62B00603534 /* CatalogViewController.swift */,
+				840319332872C4C300603534 /* TabBarController.swift */,
 				8403194A2872D69600603534 /* HumanLossesList.swift */,
 				8403194C2872D71600603534 /* EquipmentLossesViewController.swift */,
 			);
@@ -126,6 +129,14 @@
 				8451E95428730D590033FE39 /* Constans.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		84A911BC2874208A00E0F0DD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				84A911BD2874209D00E0F0DD /* CatalogViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84A911BE2874209D00E0F0DD /* CatalogViewModel.swift in Sources */,
 				8451E94C2872F1B40033FE39 /* Equipment.swift in Sources */,
 				8451E95228730C400033FE39 /* NetworkManager.swift in Sources */,
 				8403194B2872D69600603534 /* HumanLossesList.swift in Sources */,

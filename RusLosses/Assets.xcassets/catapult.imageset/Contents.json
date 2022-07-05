@@ -12,7 +12,7 @@
           "value" : "light"
         }
       ],
-      "filename" : "catapult-1.png",
+      "filename" : "catapultWhite.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -23,7 +23,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "catapultWhite.png",
+      "filename" : "catapult-1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -39,7 +39,7 @@
           "value" : "light"
         }
       ],
-      "filename" : "catapult@2x.png",
+      "filename" : "catapultWhite@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -50,7 +50,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "catapultWhite@2x.png",
+      "filename" : "catapult@2x-2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -66,7 +66,7 @@
           "value" : "light"
         }
       ],
-      "filename" : "catapult@3x-1.png",
+      "filename" : "catapultWhite@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     },
@@ -77,7 +77,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "catapultWhite@3x.png",
+      "filename" : "catapult@3x-1.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -34,7 +34,6 @@ class TabBarController: UITabBarController {
 
     private func setupViewControllers() -> [UIViewController] {
         let catalogVC = UINavigationController(rootViewController: CatalogViewController())
-        catalogVC.navigationBar.prefersLargeTitles = true
         let humanVC = UINavigationController(rootViewController: HumanLossesList())
         let eqipmentVC = UINavigationController(rootViewController: EquipmentLossesViewController())
         let controllers = [catalogVC, humanVC, eqipmentVC]
