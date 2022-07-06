@@ -23,6 +23,7 @@
 		84752A3E2874887B006E4008 /* OrksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84752A3D2874887B006E4008 /* OrksTableViewCell.swift */; };
 		84752A4B2874C183006E4008 /* OrksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84752A4A2874C183006E4008 /* OrksViewModel.swift */; };
 		84752A4D2874C192006E4008 /* EquipmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84752A4C2874C192006E4008 /* EquipmentViewModel.swift */; };
+		84752A4F2874CF0A006E4008 /* SafaryMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84752A4E2874CF0A006E4008 /* SafaryMapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		84752A3D2874887B006E4008 /* OrksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrksTableViewCell.swift; sourceTree = "<group>"; };
 		84752A4A2874C183006E4008 /* OrksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrksViewModel.swift; sourceTree = "<group>"; };
 		84752A4C2874C192006E4008 /* EquipmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentViewModel.swift; sourceTree = "<group>"; };
+		84752A4E2874CF0A006E4008 /* SafaryMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafaryMapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				840319482872D62B00603534 /* CatalogViewController.swift */,
 				8403194A2872D69600603534 /* OrkLossesList.swift */,
 				8403194C2872D71600603534 /* EquipmentLossesViewController.swift */,
+				84752A4E2874CF0A006E4008 /* SafaryMapViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				8403194B2872D69600603534 /* OrkLossesList.swift in Sources */,
 				84752A3E2874887B006E4008 /* OrksTableViewCell.swift in Sources */,
 				840319492872D62B00603534 /* CatalogViewController.swift in Sources */,
+				84752A4F2874CF0A006E4008 /* SafaryMapViewController.swift in Sources */,
 				8451E95528730D590033FE39 /* Constans.swift in Sources */,
 				840319342872C4C300603534 /* TabBarController.swift in Sources */,
 				840319302872C4C200603534 /* AppDelegate.swift in Sources */,

@@ -16,9 +16,9 @@ class TabBarController: UITabBarController {
     }
 
     private func setupTabBar() {
-        let catalogIcon = UIImage(named: "documents")
-        let humanIcon = UIImage(named: "helmet")
-        let equipmentIcon = UIImage(named: "catapult")
+        let catalogIcon = UIImage(named: Constants.UI.documents)
+        let humanIcon = UIImage(named: Constants.UI.helmet)
+        let equipmentIcon = UIImage(named: Constants.UI.catapult)
         let images = [catalogIcon, humanIcon, equipmentIcon]
 
         self.setViewControllers(setupViewControllers(), animated: true)
@@ -34,7 +34,7 @@ class TabBarController: UITabBarController {
 
     private func setupViewControllers() -> [UIViewController] {
         let catalogVC = UINavigationController(rootViewController: CatalogViewController())
-        let humanVC = UINavigationController(rootViewController: OrkLossesList())
+        let humanVC = UINavigationController(rootViewController: SafaryMapViewController())
         let eqipmentVC = UINavigationController(rootViewController: EquipmentLossesViewController())
         let controllers = [catalogVC, humanVC, eqipmentVC]
         return controllers

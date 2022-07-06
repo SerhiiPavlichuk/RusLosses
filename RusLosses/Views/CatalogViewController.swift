@@ -22,7 +22,7 @@ class CatalogViewController: UIViewController {
         let containerImageView = UIImageView()
         containerImageView.backgroundColor = .systemGray
         containerImageView.layer.cornerRadius = 20
-        containerImageView.image = UIImage(named: "goodOrk")
+        containerImageView.image = UIImage(named: Constants.UI.goodOrk)
         containerImageView.layer.borderWidth = 2
         containerImageView.layer.borderColor = UIColor.systemGray6.cgColor
         containerImageView.contentMode = .left
@@ -47,7 +47,7 @@ class CatalogViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Enemy Losses"
+        navigationItem.title = Constants.UI.title
         equipmentViewModel.loadEquip(completion: {
             self.collectionView.reloadData()
         })

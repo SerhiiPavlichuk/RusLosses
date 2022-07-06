@@ -25,7 +25,7 @@ class OrksTableViewCell: UITableViewCell {
 
     private lazy var orksLabel: UILabel = {
         let orksLabel = UILabel()
-        orksLabel.font.withSize(20)
+        orksLabel.font = .systemFont(ofSize: 20, weight: .heavy)
         orksLabel.textColor = .systemRed
         return orksLabel
     }()
@@ -48,18 +48,18 @@ class OrksTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             dayLabel.topAnchor.constraint(
                 equalTo: contentView.topAnchor, constant: 5),
-            dayLabel.centerXAnchor.constraint(
-                equalTo: contentView.centerXAnchor),
+            dayLabel.leadingAnchor.constraint(
+                equalTo: contentView.leadingAnchor, constant:  10),
             dayLabel.heightAnchor.constraint(equalToConstant: 16),
 
             dateLabel.topAnchor.constraint(
-                equalTo: dayLabel.bottomAnchor, constant: 10),
-            dateLabel.leadingAnchor.constraint(
-                equalTo: contentView.leadingAnchor, constant: 5),
+                equalTo: contentView.topAnchor, constant: 5),
+            dateLabel.trailingAnchor.constraint(
+                equalTo: contentView.trailingAnchor, constant: -5),
             dateLabel.heightAnchor.constraint(equalToConstant: 16),
 
             orksLabel.topAnchor.constraint(
-                equalTo: dateLabel.bottomAnchor, constant: 5),
+                equalTo: dateLabel.bottomAnchor, constant: 20),
             orksLabel.centerXAnchor.constraint(
                 equalTo: contentView.centerXAnchor),
             orksLabel.heightAnchor.constraint(equalToConstant: 16)
