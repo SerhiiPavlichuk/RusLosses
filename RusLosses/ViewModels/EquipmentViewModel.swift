@@ -15,6 +15,7 @@ class EquipmentViewModel {
         NetworkManager.shared.performEquipmentRequest(completion: { equip in
             self.equipments = equip
             completion()
+
         })
     }
 }

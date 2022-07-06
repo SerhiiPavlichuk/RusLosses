@@ -13,8 +13,19 @@ class CatalogViewController: UIViewController {
     var equipmentViewModel = EquipmentViewModel()
 
     private lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView()
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
 
+
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        layout.estimatedItemSize = CGSize(width: 100, height: 100)
+
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(EquipmentCollectionViewCell.self, forCellWithReuseIdentifier: EquipmentCollectionViewCell.identifier)
+        collectionView.backgroundColor = .clear
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.isUserInteractionEnabled = true
         return collectionView
     }()
 
@@ -50,12 +61,14 @@ class CatalogViewController: UIViewController {
         navigationItem.title = Constants.UI.title
         equipmentViewModel.loadEquip(completion: {
             self.collectionView.reloadData()
+
         })
 
         orksViewModel.loadGoodOrks(completion: {
             if let orks = self.orksViewModel.orks.last?.personnel {
                 let stringOrks = String(orks)
                 self.orkTitle.text = "There are already \(stringOrks) good orcs"
+
             }
         })
 
@@ -65,19 +78,37 @@ class CatalogViewController: UIViewController {
     @objc private func orksButtonPressed() {
         let vc = OrkLossesList()
         self.navigationController?.pushViewController(vc, animated: true)
-        
+
     }
 }
 
-extension CatalogViewController {
+extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        equipmentViewModel.equipments.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+                                        withReuseIdentifier: EquipmentCollectionViewCell.identifier,
+                                        for: indexPath) as? EquipmentCollectionViewCell else {
+            return UICollectionViewCell()
+
+        }
+
+        return cell
+    }
+
+
     func setupConstraints() {
         view.addSubview(containerImageView)
         containerImageView.addSubview(orkTitle)
         containerImageView.addSubview(orksButton)
+        view.addSubview(collectionView)
 
         containerImageView.translatesAutoresizingMaskIntoConstraints = false
         orkTitle.translatesAutoresizingMaskIntoConstraints = false
         orksButton.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
             containerImageView.leadingAnchor.constraint(
@@ -103,7 +134,17 @@ extension CatalogViewController {
             orksButton.leadingAnchor.constraint(
                 equalTo: containerImageView.leadingAnchor),
             orksButton.trailingAnchor.constraint(
-                equalTo: containerImageView.trailingAnchor)
+                equalTo: containerImageView.trailingAnchor),
+
+            collectionView.topAnchor.constraint(
+                equalTo: containerImageView.bottomAnchor, constant: 20),
+            collectionView.leadingAnchor.constraint(
+                equalTo: view.leadingAnchor, constant: 20),
+            collectionView.trailingAnchor.constraint(
+                equalTo: view.trailingAnchor, constant: -20),
+            collectionView.bottomAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10)
+
         ])
     }
 }

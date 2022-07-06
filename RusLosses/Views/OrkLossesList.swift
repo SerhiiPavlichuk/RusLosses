@@ -13,16 +13,16 @@ class OrkLossesList: UIViewController {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
+        tableView.register(OrksTableViewCell.self, forCellReuseIdentifier: OrksTableViewCell.identifier)
+        tableView.dataSource = self
+        tableView.delegate = self
         return tableView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.tabBar.isHidden = true
-        tableView.register(OrksTableViewCell.self, forCellReuseIdentifier: OrksTableViewCell.identifier)
         view.addSubview(tableView)
-        tableView.dataSource = self
-        tableView.delegate = self
         orkViewModel.loadGoodOrks(completion: {
             self.tableView.reloadData()
         })
@@ -47,7 +47,9 @@ extension OrkLossesList: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: OrksTableViewCell.identifier, for: indexPath) as? OrksTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(
+                                   withIdentifier: OrksTableViewCell.identifier,
+                                   for: indexPath) as? OrksTableViewCell else {
             fatalError()
 
         }
