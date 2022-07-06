@@ -20,5 +20,6 @@ struct Constants {
         static let catapult = "catapult"
         static let goodOrk = "goodOrk"
         static let title = "Enemy Losses"
+        static let map = "map"
     }
 }

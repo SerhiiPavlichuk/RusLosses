@@ -28,7 +28,7 @@ class SafaryMapViewController: UIViewController, SFSafariViewControllerDelegate 
             let myrequest = SFSafariViewController(url: link)
             myrequest.delegate = self
             present(myrequest, animated:true)
-            
+
         }
     }
 }

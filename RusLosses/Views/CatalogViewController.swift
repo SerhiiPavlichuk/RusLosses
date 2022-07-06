@@ -65,6 +65,7 @@ class CatalogViewController: UIViewController {
     @objc private func orksButtonPressed() {
         let vc = OrkLossesList()
         self.navigationController?.pushViewController(vc, animated: true)
+        
     }
 }
 
