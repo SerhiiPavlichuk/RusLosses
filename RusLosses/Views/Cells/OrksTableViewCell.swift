@@ -69,10 +69,10 @@ class OrksTableViewCell: UITableViewCell {
 
     func configureCell(orks: Orks) {
         if let day = orks.day {
-            dayLabel.text = "Invasion day \(String(describing: day))"
+            dayLabel.text = "Invasion day \(day)"
         }
          if let goodOrks = orks.personnel {
-            orksLabel.text = "Orks killed \(String(describing: goodOrks))"
+            orksLabel.text = "Orks killed \(goodOrks)"
         }
         dateLabel.text = "Date " + (orks.date ?? "No Date")
     }

@@ -11,12 +11,12 @@ class EquipmentCollectionViewCell: UICollectionViewCell {
 
     static let identifier = "EquipmentCollectionViewCell"
 
-    private lazy var destroyedEquipmentLabel: UILabel = {
-        let destroyedEquipmentLabel = UILabel()
-        destroyedEquipmentLabel.font = .systemFont(ofSize: 15, weight: .semibold)
-        destroyedEquipmentLabel.numberOfLines = 0
-        destroyedEquipmentLabel.text = "500000"
-        return destroyedEquipmentLabel
+    private lazy var dayLabel: UILabel = {
+        let dayLabel = UILabel()
+        dayLabel.font = .systemFont(ofSize: 15, weight: .semibold)
+        dayLabel.numberOfLines = 0
+        dayLabel.text = "No Date"
+        return dayLabel
     }()
 
     override init(frame: CGRect) {
@@ -36,7 +36,6 @@ class EquipmentCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupCell() {
-        contentView.clipsToBounds = true
         contentView.backgroundColor = .systemGray
         contentView.layer.cornerRadius = 10
         contentView.layer.borderWidth = 2
@@ -45,25 +44,29 @@ class EquipmentCollectionViewCell: UICollectionViewCell {
     }
 
     private func setupLayout() {
-        [destroyedEquipmentLabel].forEach {
+        [dayLabel].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview($0)
 
         }
 
         NSLayoutConstraint.activate([
-            destroyedEquipmentLabel.topAnchor.constraint(
+            dayLabel.topAnchor.constraint(
                 equalTo: contentView.topAnchor, constant: 5),
-            destroyedEquipmentLabel.leadingAnchor.constraint(
+            dayLabel.leadingAnchor.constraint(
                 equalTo: contentView.leadingAnchor, constant: 10),
-            destroyedEquipmentLabel.trailingAnchor.constraint(
-                equalTo: contentView.trailingAnchor, constant: -10)
+            dayLabel.trailingAnchor.constraint(
+                equalTo: contentView.trailingAnchor, constant: -10),
+            dayLabel.heightAnchor.constraint(equalToConstant: 80),
+            dayLabel.widthAnchor.constraint(equalToConstant: 80)
 
         ])
     }
 
     func configureCell(equip: Equipment) {
-
+        if let day = equip.day {
+            dayLabel.text = "For \(day) days destroyed equipment"
+        }
 
 
     }

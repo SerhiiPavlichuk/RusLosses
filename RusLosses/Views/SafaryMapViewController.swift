@@ -8,19 +8,11 @@
 import UIKit
 import SafariServices
 
-
-class SafaryMapViewController: UIViewController, SFSafariViewControllerDelegate {
+class SafaryMapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         loadMap()
-    }
-
-    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
-        self.dismiss(animated: true) {
-            self.tabBarController?.selectedIndex = 0
-
-        }
     }
 
     private func loadMap() {
@@ -28,6 +20,16 @@ class SafaryMapViewController: UIViewController, SFSafariViewControllerDelegate 
             let myrequest = SFSafariViewController(url: link)
             myrequest.delegate = self
             present(myrequest, animated:true)
+
+        }
+    }
+}
+
+extension SafaryMapViewController: SFSafariViewControllerDelegate {
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        self.dismiss(animated: true) {
+            self.tabBarController?.selectedIndex = 0
+            self.tabBarController?.viewDidLoad()
 
         }
     }

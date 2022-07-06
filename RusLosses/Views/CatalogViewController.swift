@@ -60,8 +60,10 @@ class CatalogViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = Constants.UI.title
         equipmentViewModel.loadEquip(completion: {
-            self.collectionView.reloadData()
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
 
+            }
         })
 
         orksViewModel.loadGoodOrks(completion: {
@@ -84,7 +86,17 @@ class CatalogViewController: UIViewController {
 
 extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        equipmentViewModel.equipments.count
+        return equipmentViewModel.equipments.count
+//        var equip: [Equipment] = []
+//        guard let equipmetnsInDay = equipmentViewModel.equip else {
+//            return 0
+//
+//        }
+//
+//
+//        equip.append(equipmetnsInDay)
+//        equip
+//        return equip.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -94,7 +106,8 @@ extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDel
             return UICollectionViewCell()
 
         }
-
+        let equip = self.equipmentViewModel.equipments.reversed()[indexPath.row]
+        cell.configureCell(equip: equip)
         return cell
     }
 
