@@ -25,6 +25,7 @@
 		84752A4D2874C192006E4008 /* EquipmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84752A4C2874C192006E4008 /* EquipmentViewModel.swift */; };
 		84752A4F2874CF0A006E4008 /* SafaryMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84752A4E2874CF0A006E4008 /* SafaryMapViewController.swift */; };
 		848CC5B828756FEE00F810BF /* EquipmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CC5B728756FEE00F810BF /* EquipmentCollectionViewCell.swift */; };
+		849250FE28783E5800CCAB71 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849250FD28783E5800CCAB71 /* UIImage+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		84752A4C2874C192006E4008 /* EquipmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentViewModel.swift; sourceTree = "<group>"; };
 		84752A4E2874CF0A006E4008 /* SafaryMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafaryMapViewController.swift; sourceTree = "<group>"; };
 		848CC5B728756FEE00F810BF /* EquipmentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentCollectionViewCell.swift; sourceTree = "<group>"; };
+		849250FD28783E5800CCAB71 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		8403192E2872C4C200603534 /* RusLosses */ = {
 			isa = PBXGroup;
 			children = (
+				849250FC28783E3F00CCAB71 /* Extensions */,
 				84752A3F28749400006E4008 /* TabBar */,
 				84A911BC2874208A00E0F0DD /* ViewModels */,
 				8451E95328730D4F0033FE39 /* Common */,
@@ -156,6 +159,14 @@
 				840319332872C4C300603534 /* TabBarController.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		849250FC28783E3F00CCAB71 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				849250FD28783E5800CCAB71 /* UIImage+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		84A911BC2874208A00E0F0DD /* ViewModels */ = {
@@ -249,6 +260,7 @@
 				840319302872C4C200603534 /* AppDelegate.swift in Sources */,
 				848CC5B828756FEE00F810BF /* EquipmentCollectionViewCell.swift in Sources */,
 				840319322872C4C300603534 /* SceneDelegate.swift in Sources */,
+				849250FE28783E5800CCAB71 /* UIImage+Extension.swift in Sources */,
 				84752A4B2874C183006E4008 /* OrksViewModel.swift in Sources */,
 				84752A4D2874C192006E4008 /* EquipmentViewModel.swift in Sources */,
 				8403194D2872D71600603534 /* EquipmentLossesViewController.swift in Sources */,

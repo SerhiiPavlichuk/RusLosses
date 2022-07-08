@@ -33,7 +33,7 @@ class CatalogViewController: UIViewController {
         let containerImageView = UIImageView()
         containerImageView.backgroundColor = .systemGray
         containerImageView.layer.cornerRadius = 20
-        containerImageView.image = UIImage(named: Constants.UI.goodOrk)
+        containerImageView.image = .goodOrk
         containerImageView.layer.borderWidth = 2
         containerImageView.layer.borderColor = UIColor.systemGray6.cgColor
         containerImageView.contentMode = .left
@@ -106,9 +106,18 @@ extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDel
             return UICollectionViewCell()
 
         }
-        let equip = self.equipmentViewModel.equipments.reversed()[indexPath.row]
+        let equip = equipmentViewModel.equipments.reversed()[indexPath.row]
         cell.configureCell(equip: equip)
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let equipDay = equipmentViewModel.equipments.reversed()[indexPath.row]
+        
+        let vc = EquipmentLossesViewController()
+        vc
+        vc.navigationController?.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
     }
 
 

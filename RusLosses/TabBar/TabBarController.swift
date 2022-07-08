@@ -16,9 +16,9 @@ class TabBarController: UITabBarController {
     }
 
     private func setupTabBar() {
-        let catalogIcon = UIImage(named: Constants.UI.documents)
-        let mapIcon = UIImage(named: Constants.UI.map)
-        let equipmentIcon = UIImage(named: Constants.UI.catapult)
+        let catalogIcon = UIImage.documents
+        let mapIcon = UIImage.map
+        let equipmentIcon = UIImage.catapult
         let images = [catalogIcon, mapIcon, equipmentIcon]
 
         self.setViewControllers(setupViewControllers(), animated: true)

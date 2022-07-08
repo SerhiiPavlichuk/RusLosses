@@ -15,11 +15,7 @@ struct Constants {
     }
 
     struct UI {
-        static let documents = "documents"
-        static let helmet = "helmet"
-        static let catapult = "catapult"
-        static let goodOrk = "goodOrk"
         static let title = "Enemy Losses"
-        static let map = "map"
+        
     }
 }

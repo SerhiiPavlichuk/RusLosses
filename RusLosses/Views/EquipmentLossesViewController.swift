@@ -9,6 +9,8 @@ import UIKit
 
 class EquipmentLossesViewController: UIViewController {
 
+   
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
