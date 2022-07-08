@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "jeep.png",
+      "filename" : "jeep-1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -23,12 +23,12 @@
           "value" : "dark"
         }
       ],
-      "filename" : "jeep-1.png",
+      "filename" : "jeep.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "jeep@2x-1.png",
+      "filename" : "jeep@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -50,7 +50,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "jeep@2x.png",
+      "filename" : "jeep@2x-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

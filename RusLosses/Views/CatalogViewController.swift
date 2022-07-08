@@ -9,8 +9,8 @@ import UIKit
 
 class CatalogViewController: UIViewController {
 
-    var orksViewModel = OrksViewModel()
-    var equipmentViewModel = EquipmentViewModel()
+    private var orksViewModel = OrksViewModel()
+    private var equipmentViewModel = EquipmentViewModel()
 
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -115,7 +115,7 @@ extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDel
         let equipDay = equipmentViewModel.equipments.reversed()[indexPath.row]
         
         let vc = EquipmentLossesViewController()
-        vc
+        vc.setupUI(equipDay)
         vc.navigationController?.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
     }
