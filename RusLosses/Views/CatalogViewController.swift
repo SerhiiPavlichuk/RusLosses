@@ -87,16 +87,7 @@ class CatalogViewController: UIViewController {
 extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return equipmentViewModel.equipments.count
-//        var equip: [Equipment] = []
-//        guard let equipmetnsInDay = equipmentViewModel.equip else {
-//            return 0
-//
-//        }
-//
-//
-//        equip.append(equipmetnsInDay)
-//        equip
-//        return equip.count
+
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
