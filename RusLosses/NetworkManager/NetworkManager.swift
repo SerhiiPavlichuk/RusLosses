@@ -60,7 +60,7 @@ struct NetworkManager {
             return "Convert String Error"
 
         }
-        return string.replacingOccurrences(of: "NaN", with: "1")
+        return string.replacingOccurrences(of: "NaN", with: "300")
     }
 }
 
