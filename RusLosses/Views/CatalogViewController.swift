@@ -93,6 +93,41 @@ class CatalogViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
 
     }
+
+    //MARK: - Add launchScreen animation
+
+    private let imageView: UIImageView = {
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 500, height: 500))
+        imageView.image = UIImage.launcIcon
+        return imageView
+    }()
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        imageView.center = view.center
+        launchScreenAnimate()
+
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.7, execute: {
+            self.launchScreenAnimate()
+        })
+    }
+
+    private func launchScreenAnimate() {
+        UIView.animate(withDuration: 0.7, animations: {
+            let size = self.view.frame.size.width * 20
+            let diffX = size - self.view.frame.size.width
+            let diffY = self.view.frame.size.height - size
+
+            self.imageView.frame = CGRect(
+                x: -(diffX/2),
+                y: diffY/2,
+                width: size,
+                height: size
+            )
+
+            self.imageView.alpha = 0
+        })
+    }
 }
 
 extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -131,6 +166,7 @@ extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDel
     //MARK: - SetupViews
 
     func setupViews() {
+        view.addSubview(imageView)
         view.addSubview(containerImageView)
         containerImageView.addSubview(orkTitle)
         containerImageView.addSubview(orksButton)

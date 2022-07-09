@@ -27,6 +27,6 @@ extension UIImage {
     static let ship = UIImage(named: "ship") ?? UIImage()
     static let specialEquip = UIImage(named: "specialEquip") ?? UIImage()
     static let tank = UIImage(named: "tank") ?? UIImage()
-
+    static let launcIcon = UIImage(named: "launcIcon") ?? UIImage()
 }
 
