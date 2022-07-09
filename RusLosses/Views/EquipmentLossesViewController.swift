@@ -9,13 +9,19 @@ import UIKit
 
 class EquipmentLossesViewController: UIViewController {
 
+    //MARK: - MainView Property
+
     private let mainView = EquipmentView()
+
+    //MARK: - Life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.tabBar.isHidden = true
 
     }
+
+    // loadView
 
     override func loadView() {
         view = mainView

@@ -9,6 +9,8 @@ import UIKit
 
 class CatalogViewController: UIViewController {
 
+    //MARK: - Properties
+
     private var orksViewModel = OrksViewModel()
     private var equipmentViewModel = EquipmentViewModel()
 
@@ -56,15 +58,22 @@ class CatalogViewController: UIViewController {
         return orksButton
     }()
 
+    //MARK: - Life cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = Constants.UI.title
+
+        //loading Equipment from API
+
         equipmentViewModel.loadEquip(completion: {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
 
             }
         })
+
+        //loading Orks from API
 
         orksViewModel.loadGoodOrks(completion: {
             if let orks = self.orksViewModel.orks.last?.personnel {
@@ -74,8 +83,10 @@ class CatalogViewController: UIViewController {
             }
         })
 
-        setupConstraints()
+        setupViews()
     }
+
+    //MARK: - Action to switch to another controller
 
     @objc private func orksButtonPressed() {
         let vc = OrkLossesList()
@@ -85,6 +96,9 @@ class CatalogViewController: UIViewController {
 }
 
 extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+
+    //MARK: - CollectionView DataSource
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return equipmentViewModel.equipments.count
 
@@ -97,10 +111,13 @@ extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDel
             return UICollectionViewCell()
 
         }
+        
         let equip = equipmentViewModel.equipments.reversed()[indexPath.row]
         cell.configureCell(equip: equip)
         return cell
     }
+
+    //MARK: - CollectionView Delegate
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let equipDay = equipmentViewModel.equipments.reversed()[indexPath.row]
@@ -111,17 +128,18 @@ extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDel
         navigationController?.pushViewController(vc, animated: true)
     }
 
+    //MARK: - SetupViews
 
-    func setupConstraints() {
+    func setupViews() {
         view.addSubview(containerImageView)
         containerImageView.addSubview(orkTitle)
         containerImageView.addSubview(orksButton)
         view.addSubview(collectionView)
+        [containerImageView, orkTitle, orksButton, collectionView].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+        }
 
-        containerImageView.translatesAutoresizingMaskIntoConstraints = false
-        orkTitle.translatesAutoresizingMaskIntoConstraints = false
-        orksButton.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        //Constraints
 
         NSLayoutConstraint.activate([
             containerImageView.leadingAnchor.constraint(

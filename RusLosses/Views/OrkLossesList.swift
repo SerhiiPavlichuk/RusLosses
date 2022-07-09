@@ -9,6 +9,8 @@ import UIKit
 
 class OrkLossesList: UIViewController {
 
+    //MARK: - Properties
+
     private var orkViewModel = OrksViewModel()
     
     private lazy var tableView: UITableView = {
@@ -18,11 +20,16 @@ class OrkLossesList: UIViewController {
         tableView.delegate = self
         return tableView
     }()
-    
+
+    //MARK: - Life cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.tabBar.isHidden = true
         view.addSubview(tableView)
+
+        // Load Orks from API
+        
         orkViewModel.loadGoodOrks(completion: {
             self.tableView.reloadData()
         })
@@ -42,6 +49,9 @@ class OrkLossesList: UIViewController {
 }
 
 extension OrkLossesList: UITableViewDataSource, UITableViewDelegate {
+
+    //MARK: - TableView DataSource
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         orkViewModel.orks.count
     }
@@ -58,6 +68,8 @@ extension OrkLossesList: UITableViewDataSource, UITableViewDelegate {
 
         return cell
     }
+
+    //MARK: - TableView Delegate
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70

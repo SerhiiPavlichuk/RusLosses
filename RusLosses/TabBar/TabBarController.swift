@@ -18,8 +18,7 @@ class TabBarController: UITabBarController {
     private func setupTabBar() {
         let catalogIcon = UIImage.documents
         let mapIcon = UIImage.map
-        let equipmentIcon = UIImage.catapult
-        let images = [catalogIcon, mapIcon, equipmentIcon]
+        let images = [catalogIcon, mapIcon]
 
         self.setViewControllers(setupViewControllers(), animated: true)
         self.tabBar.tintColor = .systemMint
@@ -38,9 +37,7 @@ class TabBarController: UITabBarController {
             rootViewController: CatalogViewController())
         let humanVC = UINavigationController(
             rootViewController: SafaryMapViewController())
-        let eqipmentVC = UINavigationController(
-            rootViewController: EquipmentLossesViewController())
-        let controllers = [catalogVC, humanVC, eqipmentVC]
+        let controllers = [catalogVC, humanVC]
         return controllers
 
     }

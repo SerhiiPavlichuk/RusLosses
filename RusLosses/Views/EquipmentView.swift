@@ -8,6 +8,8 @@
 import UIKit
 
 class EquipmentView: UIView {
+
+    //MARK: - Properties
     
     private lazy var scrollView: UIScrollView = {
       let scrollView = UIScrollView()
@@ -346,7 +348,10 @@ class EquipmentView: UIView {
 
 }
 
-extension EquipmentView {
+private extension EquipmentView {
+
+    //MARK: - SetupViews
+    
     func setupViews() {
         [scrollView, contentView, containerAircraftView, containerHelicopterView, containerTankView, containerAPCView, containerArtilleryView, containerMRLView, containerMilitaryAutoView, aircraftImageView, aircraftTitle, helicopterImageView, helicopterTitle, tankImageView, tankTitle, apcImageView, apcTitle, artilleryImageView, artilleryTitle, mrlImageView, mrlTitle, militaryAutoImageView, militaryTitle, containerFuelTankView, fuelTankImageView, fuelTankTitle, containerDroneView, droneImageView, droneTitle, containerNavalShipView, navalShipImageView, navalShipTitle, containerAntiAircraft, antiAircraftImageView, antiAircraftTitle, containerSpecialEquip, specialEquipImageView, specialEquipTitle, containerMobileSRBM, mobileSRBMImageView, mobileSRBMTitle, containerCruiseMissiles, cruiseMissilesImageView, cruiseMissilesTitle].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
