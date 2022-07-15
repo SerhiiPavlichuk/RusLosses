@@ -155,7 +155,7 @@ extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDel
     //MARK: - CollectionView Delegate
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let equipDay = equipmentViewModel.equipments.reversed()[indexPath.row]
+        let equipDay = equipmentViewModel.equipments.reversed()[indexPath.row].convertToArray()
         
         let vc = EquipmentLossesViewController()
         vc.setupUI(equipDay)

@@ -16,6 +16,6 @@ struct Constants {
 
     struct UI {
         static let title = "Enemy Losses"
-        
+        static let backgroundColor = "backgroundColor"
     }
 }

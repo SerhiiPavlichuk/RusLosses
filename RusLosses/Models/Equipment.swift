@@ -26,6 +26,49 @@ struct Equipment: Codable {
     let vehiclesAndFuelTanks: Int?
     let cruiseMissiles: Int?
 
+    func convertToArray() -> [LossesData] {
+        return [LossesData(title: "Aircraft destroyed: ",
+                           amount: self.aircraft,
+                           image: .jet),
+                LossesData(title: "Helicopter destroyed: ",
+                                   amount: self.helicopter,
+                                   image: .helicopter),
+                LossesData(title: "Tank destroyed: ",
+                                   amount: self.tank,
+                                   image: .tank),
+                LossesData(title: "APC destroyed: ",
+                                   amount: self.APC,
+                                   image: .APC),
+                LossesData(title: "Artillery destroyed: ",
+                                   amount: self.artillery,
+                                   image: .artillery),
+                LossesData(title: "MRL destroyed: ",
+                                   amount: self.MRL,
+                                   image: .MRL),
+                LossesData(title: "MilitaryAuto destroyed: ",
+                                   amount: self.militaryAuto,
+                                   image: .militaryAuto),
+                LossesData(title: "FuelTank destroyed: ",
+                                   amount: self.fuelTank,
+                                   image: .fuelTank),
+                LossesData(title: "Drone destroyed: ",
+                                   amount: self.drone,
+                                   image: .drone),
+                LossesData(title: "NavalShip destroyed: ",
+                                   amount: self.navalShip,
+                                   image: .ship),
+                LossesData(title: "AntiAircraft destroyed: ",
+                                   amount: self.antiAircraft,
+                           image: .airDefense),
+                LossesData(title: "SpecialEquip destroyed: ",
+                                   amount: self.specialEquip,
+                                   image: .specialEquip),
+                LossesData(title: "CruiseMissiles destroyed: ",
+                                   amount: self.cruiseMissiles,
+                           image: .missle)
+        ]
+    }
+
     enum CodingKeys: String, CodingKey {
         case date = "date"
         case day = "day"

@@ -9,94 +9,72 @@ import UIKit
 
 class EquipmentLossesViewController: UIViewController {
 
-    //MARK: - MainView Property
+    var arrayOfData: [LossesData] = []
 
-    private let mainView = EquipmentView()
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.register(EquipmentLossesTableViewCell.self, forCellReuseIdentifier: EquipmentLossesTableViewCell.identifier)
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.backgroundColor = UIColor(named: Constants.UI.backgroundColor)
+        tableView.separatorStyle = .none
+        return tableView
+    }()
 
     //MARK: - Life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.tabBar.isHidden = true
+        view.addSubview(tableView)
 
     }
-
-    // loadView
-
-    override func loadView() {
-        view = mainView
-    }
-
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        setupViews()
-//    }
 
     override func viewWillDisappear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
 
     }
 
-    // doesn't look pretty
-    func setupUI(_ equip: Equipment) {
-        if let aircraftCount = equip.aircraft {
-            mainView.aircraftTitle.text = "Destroyed \(aircraftCount) aircrafts"
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tableView.frame = view.bounds
+    }
+
+        func setupUI(_ equip: [LossesData]) {
+
+            self.arrayOfData = equip
+            tableView.reloadData()
+        }
+}
+
+extension EquipmentLossesViewController: UITableViewDataSource, UITableViewDelegate {
+
+    //MARK: - TableView DataSource
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        arrayOfData.count
+        
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: EquipmentLossesTableViewCell.identifier,
+            for: indexPath) as? EquipmentLossesTableViewCell else {
+            fatalError()
 
         }
 
-        if let helicoptersCount = equip.helicopter {
-            mainView.helicopterTitle.text = "Destroyed \(helicoptersCount) helicopters"
+        let equipModel = arrayOfData[indexPath.row]
+        cell.configureCell(equip: equipModel)
 
-        }
+        return cell
+    }
 
-        if let tankCount = equip.tank {
-            mainView.tankTitle.text = "Destroyed \(tankCount) tanks"
+    //MARK: - TableView Delegate
 
-        }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
 
-        if let apcCount = equip.APC {
-            mainView.apcTitle.text = "Destroyed \(apcCount) APC"
-        }
-
-        if let artilleryCount = equip.artillery {
-            mainView.artilleryTitle.text = "Destroyed \(artilleryCount) artillery"
-        }
-
-        if let mrlCount = equip.MRL {
-            mainView.mrlTitle.text = "Destroyed \(mrlCount) MRL"
-        }
-
-        if let militaryCount = equip.militaryAuto {
-            mainView.militaryTitle.text = "Destroyed \(militaryCount) militaryAuto"
-        }
-
-        if let fuelTanksCount = equip.fuelTank {
-            mainView.fuelTankTitle.text = "Destroyed \(fuelTanksCount) fueltanks"
-        }
-
-        if let droneCount = equip.drone {
-            mainView.droneTitle.text = "Destroyed \(droneCount) drones"
-        }
-
-        if let navalShipCount = equip.navalShip {
-            mainView.navalShipTitle.text = "Destroyed \(navalShipCount) ships"
-        }
-
-        if let antiAircraftCount = equip.antiAircraft {
-            mainView.antiAircraftTitle.text = "Destroyed \(antiAircraftCount) antiAircrafts"
-        }
-
-        if let specialEquipCount = equip.specialEquip {
-            mainView.specialEquipTitle.text = "Destroyed \(specialEquipCount) equips"
-        }
-
-        if let srbmCount = equip.mobileSRBM {
-            mainView.mobileSRBMTitle.text = "Destroyed \(srbmCount) srbm"
-        }
-
-        if let misslesCount = equip.cruiseMissiles {
-            mainView.cruiseMissilesTitle.text = "Destroyed \(misslesCount) missles"
-        }
     }
 }
 
