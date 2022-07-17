@@ -11,15 +11,24 @@ class OrksTableViewCell: UITableViewCell {
 
     static let identifier = "OrksTableViewCell"
 
+    private lazy var containerView: UIView = {
+        let containerView = UIView()
+        containerView.backgroundColor = .systemGray
+        containerView.layer.cornerRadius = 20
+        containerView.layer.borderWidth = 2
+        containerView.layer.borderColor = UIColor.systemGray6.cgColor
+        return containerView
+    }()
+
     private lazy var dayLabel: UILabel = {
         let daylabel = UILabel()
-        daylabel.font.withSize(25)
+        daylabel.font = .systemFont(ofSize: 20, weight: .semibold)
         return daylabel
     }()
 
     private lazy var dateLabel: UILabel = {
         let dateLabel = UILabel()
-        dateLabel.font.withSize(20)
+        dateLabel.font = .systemFont(ofSize: 20, weight: .semibold)
         return dateLabel
     }()
 
@@ -33,6 +42,7 @@ class OrksTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupCell()
+
     }
     
     required init?(coder: NSCoder) {
@@ -40,34 +50,47 @@ class OrksTableViewCell: UITableViewCell {
     }
 
     private func setupCell() {
-        [dayLabel, dateLabel, orksLabel].forEach {
+        [containerView, dayLabel, dateLabel, orksLabel].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
-            contentView.addSubview($0)
         }
 
+        contentView.addSubview(containerView)
+        containerView.addSubview(dayLabel)
+        containerView.addSubview(dateLabel)
+        containerView.addSubview(orksLabel)
+
         NSLayoutConstraint.activate([
-            dayLabel.topAnchor.constraint(
+            containerView.topAnchor.constraint(
                 equalTo: contentView.topAnchor, constant: 5),
+            containerView.leadingAnchor.constraint(
+                equalTo: contentView.leadingAnchor, constant: 10),
+            containerView.trailingAnchor.constraint(
+                equalTo: contentView.trailingAnchor, constant: -10),
+            containerView.heightAnchor.constraint(equalToConstant: 60),
+            
+            dayLabel.topAnchor.constraint(
+                equalTo: containerView.topAnchor, constant: 5),
             dayLabel.leadingAnchor.constraint(
-                equalTo: contentView.leadingAnchor, constant:  10),
+                equalTo: containerView.leadingAnchor, constant:  15),
             dayLabel.heightAnchor.constraint(equalToConstant: 16),
 
             dateLabel.topAnchor.constraint(
-                equalTo: contentView.topAnchor, constant: 5),
+                equalTo: containerView.topAnchor, constant: 5),
             dateLabel.trailingAnchor.constraint(
-                equalTo: contentView.trailingAnchor, constant: -5),
+                equalTo: containerView.trailingAnchor, constant: -15),
             dateLabel.heightAnchor.constraint(equalToConstant: 16),
 
             orksLabel.topAnchor.constraint(
                 equalTo: dateLabel.bottomAnchor, constant: 20),
             orksLabel.centerXAnchor.constraint(
-                equalTo: contentView.centerXAnchor),
+                equalTo: containerView.centerXAnchor),
             orksLabel.heightAnchor.constraint(equalToConstant: 16)
 
         ])
     }
 
     func configureCell(orks: Orks) {
+        contentView.backgroundColor = UIColor(named: Constants.UI.backgroundColor)
         if let day = orks.day {
             dayLabel.text = "Invasion day \(day)"
         }

@@ -18,6 +18,8 @@ class OrkLossesList: UIViewController {
         tableView.register(OrksTableViewCell.self, forCellReuseIdentifier: OrksTableViewCell.identifier)
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.backgroundColor = UIColor(named: Constants.UI.backgroundColor)
+        tableView.separatorStyle = .none
         return tableView
     }()
 

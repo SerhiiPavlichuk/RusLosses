@@ -25,6 +25,7 @@ class EquipmentLossesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setupNavigationBar()
         self.tabBarController?.tabBar.isHidden = true
         view.addSubview(tableView)
 
@@ -40,11 +41,11 @@ class EquipmentLossesViewController: UIViewController {
         tableView.frame = view.bounds
     }
 
-        func setupUI(_ equip: [LossesData]) {
+    func setupUI(_ equip: [LossesData]) {
 
-            self.arrayOfData = equip
-            tableView.reloadData()
-        }
+        self.arrayOfData = equip
+        tableView.reloadData()
+    }
 }
 
 extension EquipmentLossesViewController: UITableViewDataSource, UITableViewDelegate {
@@ -77,4 +78,3 @@ extension EquipmentLossesViewController: UITableViewDataSource, UITableViewDeleg
 
     }
 }
-

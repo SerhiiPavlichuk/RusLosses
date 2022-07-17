@@ -62,6 +62,7 @@ class CatalogViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setupNavigationBar()
         navigationItem.title = Constants.UI.title
 
         //loading Equipment from API
