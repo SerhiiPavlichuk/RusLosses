@@ -15,6 +15,11 @@ class TabBarController: UITabBarController {
 
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tabBar.frame.size.height = 95
+    }
+
     private func setupTabBar() {
         let catalogIcon = UIImage.documents
         let mapIcon = UIImage.map
@@ -36,7 +41,7 @@ class TabBarController: UITabBarController {
         let catalogVC = UINavigationController(
             rootViewController: CatalogViewController())
         let humanVC = UINavigationController(
-            rootViewController: SafaryMapViewController())
+            rootViewController: MapViewController())
         let controllers = [catalogVC, humanVC]
         return controllers
 

@@ -16,6 +16,7 @@ struct Constants {
 
     struct UI {
         static let title = "Enemy Losses"
+        static let mapTitle = "Invasion map"
         static let backgroundColor = "backgroundColor"
     }
 }
