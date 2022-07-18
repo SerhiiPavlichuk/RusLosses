@@ -88,7 +88,6 @@
 		8403192E2872C4C200603534 /* RusLosses */ = {
 			isa = PBXGroup;
 			children = (
-				849250FC28783E3F00CCAB71 /* Extensions */,
 				84752A3F28749400006E4008 /* TabBar */,
 				84A911BC2874208A00E0F0DD /* ViewModels */,
 				8451E95328730D4F0033FE39 /* Common */,
@@ -96,6 +95,7 @@
 				8451E94A2872F19E0033FE39 /* Models */,
 				840319442872D4D900603534 /* SupportingFiles */,
 				840319472872D5D300603534 /* Views */,
+				849250FC28783E3F00CCAB71 /* Extensions */,
 				840319352872C4C300603534 /* Main.storyboard */,
 				840319382872C4C400603534 /* Assets.xcassets */,
 				8403193A2872C4C400603534 /* LaunchScreen.storyboard */,

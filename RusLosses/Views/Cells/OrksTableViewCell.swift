@@ -11,6 +11,8 @@ class OrksTableViewCell: UITableViewCell {
 
     static let identifier = "OrksTableViewCell"
 
+    //MARK: - Properties
+
     private lazy var containerView: UIView = {
         let containerView = UIView()
         containerView.backgroundColor = .systemGray
@@ -49,6 +51,8 @@ class OrksTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
+    //MARK: -  SetupCell
+
     private func setupCell() {
         [containerView, dayLabel, dateLabel, orksLabel].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
@@ -58,6 +62,8 @@ class OrksTableViewCell: UITableViewCell {
         containerView.addSubview(dayLabel)
         containerView.addSubview(dateLabel)
         containerView.addSubview(orksLabel)
+
+        //Constrains
 
         NSLayoutConstraint.activate([
             containerView.topAnchor.constraint(
@@ -88,6 +94,8 @@ class OrksTableViewCell: UITableViewCell {
 
         ])
     }
+
+    //MARK: - Configure Cell
 
     func configureCell(orks: Orks) {
         contentView.backgroundColor = UIColor(named: Constants.UI.backgroundColor)

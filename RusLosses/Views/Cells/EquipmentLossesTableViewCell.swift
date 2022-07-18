@@ -11,6 +11,8 @@ class EquipmentLossesTableViewCell: UITableViewCell {
 
     static let identifier = "EquipmentLossesTableViewCell"
 
+    //MARK: - Properties
+
     private lazy var containerView: UIView = {
         let containerView = UIView()
         containerView.backgroundColor = .systemGray
@@ -49,6 +51,8 @@ class EquipmentLossesTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
+    //MARK: - Configure Cell
+
     func configureCell(equip: LossesData) {
         contentView.backgroundColor = UIColor(named: Constants.UI.backgroundColor)
         equipImageView.image = equip.image
@@ -57,6 +61,8 @@ class EquipmentLossesTableViewCell: UITableViewCell {
             amountTitle.text = String(equipDestroyed)
         }
     }
+
+    //MARK: - Setup Cell
 
     private func setupCell() {
         [containerView, equipImageView, equipNameTitle, amountTitle].forEach {
@@ -69,6 +75,8 @@ class EquipmentLossesTableViewCell: UITableViewCell {
         containerView.addSubview(equipNameTitle)
         containerView.addSubview(amountTitle)
 
+        //Constrains
+        
         NSLayoutConstraint.activate([
             containerView.topAnchor.constraint(
                 equalTo: contentView.topAnchor, constant: 5),

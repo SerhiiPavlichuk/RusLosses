@@ -11,6 +11,8 @@ class EquipmentCollectionViewCell: UICollectionViewCell {
 
     static let identifier = "EquipmentCollectionViewCell"
 
+    //MARK: - Properties
+
     private lazy var dayLabel: UILabel = {
         let dayLabel = UILabel()
         dayLabel.font = .systemFont(ofSize: 15, weight: .semibold)
@@ -34,6 +36,8 @@ class EquipmentCollectionViewCell: UICollectionViewCell {
         setupLayout()
 
     }
+
+    //MARK: - SetupCell
     
     private func setupCell() {
         contentView.backgroundColor = .systemGray
@@ -42,6 +46,8 @@ class EquipmentCollectionViewCell: UICollectionViewCell {
         contentView.layer.borderColor = UIColor.systemGray6.cgColor
 
     }
+
+    //MARK: - Setup Layout
 
     private func setupLayout() {
         [dayLabel].forEach {
@@ -62,6 +68,8 @@ class EquipmentCollectionViewCell: UICollectionViewCell {
 
         ])
     }
+
+    //MARK: - Cofigure Cell
 
     func configureCell(equip: Equipment) {
         if let day = equip.day {
