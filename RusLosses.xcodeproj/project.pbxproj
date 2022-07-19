@@ -96,7 +96,6 @@
 				840319442872D4D900603534 /* SupportingFiles */,
 				840319472872D5D300603534 /* Views */,
 				849250FC28783E3F00CCAB71 /* Extensions */,
-				840319352872C4C300603534 /* Main.storyboard */,
 				840319382872C4C400603534 /* Assets.xcassets */,
 				8403193A2872C4C400603534 /* LaunchScreen.storyboard */,
 				8403193D2872C4C400603534 /* Info.plist */,
@@ -116,6 +115,7 @@
 		840319472872D5D300603534 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				840319352872C4C300603534 /* Main.storyboard */,
 				84752A3C28748859006E4008 /* Cells */,
 				840319482872D62B00603534 /* CatalogViewController.swift */,
 				8403194A2872D69600603534 /* OrkLossesList.swift */,

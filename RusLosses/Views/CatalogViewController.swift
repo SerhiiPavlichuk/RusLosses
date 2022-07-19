@@ -58,12 +58,19 @@ class CatalogViewController: UIViewController {
         return orksButton
     }()
 
+    private lazy var sortedButton: UIBarButtonItem = {
+        let sortedButton = UIBarButtonItem(image: Constants.UI.sortedButton, style: .plain, target: self, action: #selector(sortedDataDisplay))
+        return sortedButton
+    }()
+
     //MARK: - Life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setupNavigationBar()
         navigationItem.title = Constants.UI.title
+
+        self.navigationItem.rightBarButtonItem  = sortedButton
 
         //loading Equipment from API
 
@@ -77,14 +84,53 @@ class CatalogViewController: UIViewController {
         //loading Orks from API
 
         orksViewModel.loadGoodOrks(completion: {
-            if let orks = self.orksViewModel.orks.last?.personnel {
+            self.displayOrks()
+        })
+
+        setupViews()
+    }
+
+    private func displayOrks() {
+        if let orks = self.orksViewModel.orks.last?.personnel {
+            let stringOrks = String(orks)
+            self.orkTitle.text = "There are already \(stringOrks) good orcs"
+
+        }
+    }
+
+    //MARK: - Toggle Data   !! it`s works but doesn't look nice
+
+    @objc private func sortedDataDisplay() {
+
+        //Create Alert Controller
+        let alert = UIAlertController(title: Constants.UI.alertTitle,
+                                      message: Constants.UI.alertMessage,
+                                      preferredStyle: UIAlertController.Style.alert)
+
+        // Create the actions
+        let fromFirstDayAction = UIAlertAction(title: Constants.UI.alertActionFirstDayTitle, style: UIAlertAction.Style.default) { _ in
+            if let orks = self.orksViewModel.orks.first?.personnel {
                 let stringOrks = String(orks)
                 self.orkTitle.text = "There are already \(stringOrks) good orcs"
 
             }
-        })
 
-        setupViews()
+            self.equipmentViewModel.equipments = self.equipmentViewModel.reversed
+            self.collectionView.reloadData()
+        }
+
+        let fromLastDayAction = UIAlertAction(title: "From last day", style: UIAlertAction.Style.default) { _ in
+            self.equipmentViewModel.equipments = self.equipmentViewModel.notReversed
+            self.collectionView.reloadData()
+            self.displayOrks()
+
+        }
+
+        // Add the actions
+        alert.addAction(fromFirstDayAction)
+        alert.addAction(fromLastDayAction)
+        self.present(alert, animated: true, completion: nil)
+
     }
 
     //MARK: - Action to switch to another controller
@@ -142,8 +188,8 @@ extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDel
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
-                                        withReuseIdentifier: EquipmentCollectionViewCell.identifier,
-                                        for: indexPath) as? EquipmentCollectionViewCell else {
+            withReuseIdentifier: EquipmentCollectionViewCell.identifier,
+            for: indexPath) as? EquipmentCollectionViewCell else {
             return UICollectionViewCell()
 
         }

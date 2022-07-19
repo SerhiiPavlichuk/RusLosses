@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 struct Constants {
 
     struct Network {
@@ -18,5 +19,9 @@ struct Constants {
         static let title = "Enemy Losses"
         static let mapTitle = "Invasion map"
         static let backgroundColor = "backgroundColor"
+        static let sortedButton = UIImage(systemName: "line.horizontal.3.decrease.circle")
+        static let alertTitle = "Change Data Displaying"
+        static let alertMessage = "You can change displaying data from 1st invasion day to last and vice versa"
+        static let alertActionFirstDayTitle = "From 1st day"
     }
 }
