@@ -91,7 +91,7 @@ class CatalogViewController: UIViewController {
     }
 
     private func displayOrks() {
-        if let orks = self.orksViewModel.orks.last?.personnel {
+        if let orks = self.orksViewModel.orks.first?.personnel {
             let stringOrks = String(orks)
             self.orkTitle.text = "There are already \(stringOrks) good orcs"
 
@@ -109,20 +109,19 @@ class CatalogViewController: UIViewController {
 
         // Create the actions
         let fromFirstDayAction = UIAlertAction(title: Constants.UI.alertActionFirstDayTitle, style: UIAlertAction.Style.default) { _ in
-            if let orks = self.orksViewModel.orks.first?.personnel {
-                let stringOrks = String(orks)
-                self.orkTitle.text = "There are already \(stringOrks) good orcs"
-
-            }
-
-            self.equipmentViewModel.equipments = self.equipmentViewModel.reversed
+            self.displayOrks()
+            self.equipmentViewModel.equipments = self.equipmentViewModel.notReversed
             self.collectionView.reloadData()
         }
 
         let fromLastDayAction = UIAlertAction(title: "From last day", style: UIAlertAction.Style.default) { _ in
-            self.equipmentViewModel.equipments = self.equipmentViewModel.notReversed
+            self.equipmentViewModel.equipments = self.equipmentViewModel.reversed
             self.collectionView.reloadData()
-            self.displayOrks()
+            if let orks = self.orksViewModel.orks.last?.personnel {
+                let stringOrks = String(orks)
+                self.orkTitle.text = "There are already \(stringOrks) good orcs"
+
+            }
 
         }
 
@@ -194,7 +193,7 @@ extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDel
 
         }
         
-        let equip = equipmentViewModel.equipments.reversed()[indexPath.row]
+        let equip = equipmentViewModel.equipments[indexPath.row]
         cell.configureCell(equip: equip)
         return cell
     }
@@ -202,10 +201,10 @@ extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDel
     //MARK: - CollectionView Delegate
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let equipDay = equipmentViewModel.equipments.reversed()[indexPath.row].convertToArray()
-        
+        let equipDay = equipmentViewModel.equipments[indexPath.row]
+        let convertedArray = equipmentViewModel.convertToArray(equipDay)
         let vc = EquipmentLossesViewController()
-        vc.setupUI(equipDay)
+        vc.setupUI(convertedArray)
         vc.navigationController?.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
     }
