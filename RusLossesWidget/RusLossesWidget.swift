@@ -138,6 +138,13 @@ struct RusLossesWidgetEntryView : View {
     }
 }
 
+struct RusLossesWidgetBundle: WidgetBundle {
+    @WidgetBundleBuilder
+    var body: some Widget {
+        RusLossesWidget()
+    }
+}
+
 @main
 struct RusLossesWidget: Widget {
     let kind: String = "RusLossesWidget"
@@ -148,6 +155,7 @@ struct RusLossesWidget: Widget {
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
+        .supportedFamilies([.systemSmall])
     }
 }
 
