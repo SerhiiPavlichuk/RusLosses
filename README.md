@@ -27,6 +27,7 @@ This application shows the loss of the enemy in personnel and equipment.
    - Map Screen:
         - When you go to the screen, an animated Activity indicator is displayed until the map is loaded.
         - Map made with WKWebView
+- Widget
 
 
 ## Technologies Used
@@ -40,3 +41,5 @@ This application shows the loss of the enemy in personnel and equipment.
 * Custom UICollectionViewCell and UITableViewCell
 * UI written programmatically
 * Animation
+* UserDefaults
+* WidgetKit
