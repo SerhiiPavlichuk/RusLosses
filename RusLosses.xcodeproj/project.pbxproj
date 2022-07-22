@@ -25,11 +25,43 @@
 		84752A4D2874C192006E4008 /* EquipmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84752A4C2874C192006E4008 /* EquipmentViewModel.swift */; };
 		84752A4F2874CF0A006E4008 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84752A4E2874CF0A006E4008 /* MapViewController.swift */; };
 		848CC5B828756FEE00F810BF /* EquipmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CC5B728756FEE00F810BF /* EquipmentCollectionViewCell.swift */; };
+		8492D48C2889EE53000DDBF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840319382872C4C400603534 /* Assets.xcassets */; };
+		8492D48D2889EE66000DDBF3 /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8451E95428730D590033FE39 /* Constans.swift */; };
+		8492D48F2889F0B1000DDBF3 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0BEBF28816BD700B133A7 /* UIImage+Extension.swift */; };
 		84B0BEBA2881331400B133A7 /* LossesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0BEB92881331400B133A7 /* LossesData.swift */; };
 		84B0BEBC28814D1100B133A7 /* EquipmentLossesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0BEBB28814D1100B133A7 /* EquipmentLossesTableViewCell.swift */; };
 		84B0BEC028816BD800B133A7 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0BEBF28816BD700B133A7 /* UIImage+Extension.swift */; };
 		84B0BEC22881824600B133A7 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0BEC12881824600B133A7 /* UINavigationController+Extension.swift */; };
+		84D390462889D77B00822E44 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D390452889D77B00822E44 /* WidgetKit.framework */; };
+		84D390482889D77B00822E44 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D390472889D77B00822E44 /* SwiftUI.framework */; };
+		84D3904B2889D77B00822E44 /* RusLossesWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D3904A2889D77B00822E44 /* RusLossesWidget.swift */; };
+		84D3904D2889D77E00822E44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D3904C2889D77E00822E44 /* Assets.xcassets */; };
+		84D390512889D77E00822E44 /* RusLossesWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 84D390432889D77B00822E44 /* RusLossesWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84D3904F2889D77E00822E44 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 840319242872C4C200603534 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84D390422889D77B00822E44;
+			remoteInfo = RusLossesWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		84D390522889D77E00822E44 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				84D390512889D77E00822E44 /* RusLossesWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8403192C2872C4C200603534 /* RusLosses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RusLosses.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +88,14 @@
 		84B0BEBB28814D1100B133A7 /* EquipmentLossesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentLossesTableViewCell.swift; sourceTree = "<group>"; };
 		84B0BEBF28816BD700B133A7 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		84B0BEC12881824600B133A7 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
+		84D390432889D77B00822E44 /* RusLossesWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RusLossesWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		84D390452889D77B00822E44 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		84D390472889D77B00822E44 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		84D3904A2889D77B00822E44 /* RusLossesWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RusLossesWidget.swift; sourceTree = "<group>"; };
+		84D3904C2889D77E00822E44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84D3904E2889D77E00822E44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84D390562889D7EC00822E44 /* RusLosses.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RusLosses.entitlements; sourceTree = "<group>"; };
+		84D390572889D83800822E44 /* RusLossesWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RusLossesWidgetExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,13 +106,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		84D390402889D77B00822E44 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84D390482889D77B00822E44 /* SwiftUI.framework in Frameworks */,
+				84D390462889D77B00822E44 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		840319232872C4C200603534 = {
 			isa = PBXGroup;
 			children = (
+				84D390572889D83800822E44 /* RusLossesWidgetExtension.entitlements */,
 				8403192E2872C4C200603534 /* RusLosses */,
+				84D390492889D77B00822E44 /* RusLossesWidget */,
+				84D390442889D77B00822E44 /* Frameworks */,
 				8403192D2872C4C200603534 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -81,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				8403192C2872C4C200603534 /* RusLosses.app */,
+				84D390432889D77B00822E44 /* RusLossesWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,6 +141,7 @@
 		8403192E2872C4C200603534 /* RusLosses */ = {
 			isa = PBXGroup;
 			children = (
+				84D390562889D7EC00822E44 /* RusLosses.entitlements */,
 				84752A3F28749400006E4008 /* TabBar */,
 				84A911BC2874208A00E0F0DD /* ViewModels */,
 				8451E95328730D4F0033FE39 /* Common */,
@@ -187,6 +241,25 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		84D390442889D77B00822E44 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84D390452889D77B00822E44 /* WidgetKit.framework */,
+				84D390472889D77B00822E44 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84D390492889D77B00822E44 /* RusLossesWidget */ = {
+			isa = PBXGroup;
+			children = (
+				84D3904A2889D77B00822E44 /* RusLossesWidget.swift */,
+				84D3904C2889D77E00822E44 /* Assets.xcassets */,
+				84D3904E2889D77E00822E44 /* Info.plist */,
+			);
+			path = RusLossesWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -197,15 +270,34 @@
 				840319282872C4C200603534 /* Sources */,
 				840319292872C4C200603534 /* Frameworks */,
 				8403192A2872C4C200603534 /* Resources */,
+				84D390522889D77E00822E44 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				84D390502889D77E00822E44 /* PBXTargetDependency */,
 			);
 			name = RusLosses;
 			productName = RusLosses;
 			productReference = 8403192C2872C4C200603534 /* RusLosses.app */;
 			productType = "com.apple.product-type.application";
+		};
+		84D390422889D77B00822E44 /* RusLossesWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84D390552889D77E00822E44 /* Build configuration list for PBXNativeTarget "RusLossesWidgetExtension" */;
+			buildPhases = (
+				84D3903F2889D77B00822E44 /* Sources */,
+				84D390402889D77B00822E44 /* Frameworks */,
+				84D390412889D77B00822E44 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RusLossesWidgetExtension;
+			productName = RusLossesWidgetExtension;
+			productReference = 84D390432889D77B00822E44 /* RusLossesWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -218,6 +310,9 @@
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					8403192B2872C4C200603534 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					84D390422889D77B00822E44 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
 				};
@@ -236,6 +331,7 @@
 			projectRoot = "";
 			targets = (
 				8403192B2872C4C200603534 /* RusLosses */,
+				84D390422889D77B00822E44 /* RusLossesWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -248,6 +344,15 @@
 				8403193C2872C4C400603534 /* LaunchScreen.storyboard in Resources */,
 				840319392872C4C400603534 /* Assets.xcassets in Resources */,
 				840319372872C4C300603534 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84D390412889D77B00822E44 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8492D48C2889EE53000DDBF3 /* Assets.xcassets in Resources */,
+				84D3904D2889D77E00822E44 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +385,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		84D3903F2889D77B00822E44 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8492D48F2889F0B1000DDBF3 /* UIImage+Extension.swift in Sources */,
+				8492D48D2889EE66000DDBF3 /* Constans.swift in Sources */,
+				84D3904B2889D77B00822E44 /* RusLossesWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84D390502889D77E00822E44 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84D390422889D77B00822E44 /* RusLossesWidgetExtension */;
+			targetProxy = 84D3904F2889D77E00822E44 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		840319352872C4C300603534 /* Main.storyboard */ = {
@@ -419,8 +542,10 @@
 		840319412872C4C400603534 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RusLosses/RusLosses.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VVT5US76Z7;
@@ -447,8 +572,10 @@
 		840319422872C4C400603534 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RusLosses/RusLosses.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VVT5US76Z7;
@@ -472,6 +599,62 @@
 			};
 			name = Release;
 		};
+		84D390532889D77E00822E44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = RusLossesWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VVT5US76Z7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RusLossesWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RusLossesWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Serhii.Pavlichuk.RusLosses.RusLossesWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84D390542889D77E00822E44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = RusLossesWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VVT5US76Z7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RusLossesWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RusLossesWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Serhii.Pavlichuk.RusLosses.RusLossesWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -489,6 +672,15 @@
 			buildConfigurations = (
 				840319412872C4C400603534 /* Debug */,
 				840319422872C4C400603534 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84D390552889D77E00822E44 /* Build configuration list for PBXNativeTarget "RusLossesWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84D390532889D77E00822E44 /* Debug */,
+				84D390542889D77E00822E44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

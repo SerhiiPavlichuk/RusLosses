@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import WidgetKit
 
 class EquipmentViewModel {
 
@@ -18,6 +19,22 @@ class EquipmentViewModel {
             self.equipments = equip
             self.notReversed = equip
             self.reversed = equip.reversed()
+
+            // save in userDefaults for usings this fata in widget
+            if let userDefaults = UserDefaults(suiteName: "group.equipments") {
+                userDefaults.setValue(equip.last?.day, forKey: "day")
+                userDefaults.setValue(equip.last?.tank, forKey: "tank")
+                userDefaults.setValue(equip.last?.APC, forKey: "APC")
+                userDefaults.setValue(equip.last?.helicopter, forKey: "helicopter")
+                userDefaults.setValue(equip.last?.artillery, forKey: "artillery")
+                userDefaults.setValue(equip.last?.aircraft, forKey: "aircraft")
+                userDefaults.setValue(equip.last?.MRL, forKey: "MRL")
+                userDefaults.setValue(equip.last?.drone, forKey: "drone")
+                userDefaults.setValue(equip.last?.navalShip, forKey: "navalShip")
+
+            }
+            // reload Widget
+            WidgetCenter.shared.reloadAllTimelines()
             completion()
 
         })
