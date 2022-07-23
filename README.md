@@ -11,6 +11,7 @@
 * [Features](#features)
 * [Technologies Used](#technologies-used)
 * [MIT License](https://github.com/SerhiiPavlichuk/RusLosses/blob/main/LICENSE)
+* [To-Do list](#to-do-list)
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
@@ -43,3 +44,10 @@ This application shows the loss of the enemy in personnel and equipment.
 * Animation
 * UserDefaults
 * WidgetKit
+
+## TO-DO list
+
+* Hand over app to the thrifty hands of the UI/UX designer for revision :D
+* Finalize the widget with other sizes (now it is configured to have only 1 type of .systemSmall widget)
+* Make donations for the Ukrainian army 💪
+* Сhange API for example to [this](https://github.com/PetroIvaniuk/2022-Ukraine-Russia-War-Dataset) it`s updated every day
